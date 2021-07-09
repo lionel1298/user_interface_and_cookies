@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.css')}}">
+    <script type= "text/javascript" src="{{url_for('static', filename= 'js/app.js')}}"></script>
+
+    <title>{{username}} scores</title>
+</head>
+<body onload="hello('{{username}}')">
+    <div class ="container p-4" >
+        <h1>welcome {{username}}</h1>
+    <p>Below is your score list </p>
+    <table class="table table-sm table-hover table-primary ">
+        <thead>
+            <tr>
+                <th>date</th>
+                <th>subject</th>
+                <th>marks</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            {%for score in scores :%}
+            <tr>
+                <td>{{score['date']}}</td>
+                <td>{{score['subjectname']}}</td>
+                <td>{{score['marks']}}</td>
+            </tr>
+            {%endfor%}
+
+
+        </tbody>
+
+
+    </table>
+
+
+
+
+
+
+    </div>
+    
+    
+</body>
+</html>
