@@ -1,5 +1,6 @@
 from flask import Flask,request, redirect, url_for, render_template,session,escape
 import sqlite3
+from trainers import Trainer
 
 from flask.helpers import make_response
 app=Flask(__name__)
